@@ -192,6 +192,21 @@ The name comes from the idea that data oriented architecture is like a set of st
 
 A Linguine configuration file is a YAML file used to define the structure and behavior of data-oriented interfaces. These files specify the inputs, outputs, and various operations to be performed on the data. The configuration is hierarchical, allowing one interface to inherit from another.
 
+### Project Status
+
+The Linguine project has adopted the following governance and documentation frameworks:
+
+* **VibeSafe Protocols**: We've installed the VibeSafe protocols for project governance by running the script specified in `vibesafe`.
+* **Project Philosophy**: We've established our [data-oriented architecture approach](docs/philosophy.md) to specifications in our philosophy document.
+* **Code Improvement Proposals**: We've initiated our CIP system with [CIP-0001](cip/cip0001.md), which proposes a formal tenets system derived from our philosophy.
+* **Tenet System**: The proposed tenet system will formalize our guiding principles for decision-making.
+
+### Project Overview
+
+* **Project Philosophy**: Linguine follows a [data-oriented architecture approach](docs/philosophy.md) to specifications, placing data at the center of the design.
+* **Project Tenets**: Our project is guided by a set of core [tenets](cip/cip0001.md) that inform decision-making and design choices.
+* **Code Improvement Proposals**: Major changes to the project are documented through our [CIP system](cip/).
+
 ### Characteristics
 
 1. **Hierarchical Structure**: Interfaces can inherit from other interfaces, allowing for reusable and extendable configurations.
