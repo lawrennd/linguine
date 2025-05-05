@@ -196,23 +196,25 @@ A Linguine configuration file is a YAML file used to define the structure and be
 
 The Linguine project has adopted the following governance and documentation frameworks:
 
-* **VibeSafe Protocols**: We've installed the VibeSafe protocols for project governance by running the script specified in `vibesafe`.
-* **Project Philosophy**: We've established our [data-oriented architecture approach](docs/philosophy.md) to specifications in our philosophy document.
-* **Code Improvement Proposals**: We've initiated our CIP system with [CIP-0001](cip/cip0001.md), which proposes a formal tenets system derived from our philosophy.
-* **Tenet System**: The proposed tenet system will formalize our guiding principles for decision-making.
+* *VibeSafe Protocols*: We've installed the VibeSafe protocols for project governance by running the script specified in `vibesafe`.
+* *Project Philosophy*: We've established our [data-oriented architecture approach](docs/philosophy.md) to specifications in our philosophy document.
+* *Code Improvement Proposals*: We've initiated our CIP system with [CIP-0001](cip/cip0001.md), which proposes a formal tenets system derived from our philosophy.
+* *Tenet System*: The proposed tenet system will formalize our guiding principles for decision-making.
+* *Backlog System*: We maintain a structured [project backlog](backlog/) to track planned tasks, improvements, and features.
 
 ### Project Overview
 
-* **Project Philosophy**: Linguine follows a [data-oriented architecture approach](docs/philosophy.md) to specifications, placing data at the center of the design.
-* **Project Tenets**: Our project is guided by a set of core [tenets](cip/cip0001.md) that inform decision-making and design choices.
-* **Code Improvement Proposals**: Major changes to the project are documented through our [CIP system](cip/).
+* *Project Philosophy*: Linguine follows a [data-oriented architecture approach](docs/philosophy.md) to specifications, placing data at the center of the design.
+* *Project Tenets*: Our project is guided by a set of core [tenets](cip/cip0001.md) that inform decision-making and design choices.
+* *Code Improvement Proposals*: Major changes to the project are documented through our [CIP system](cip/).
+* *Project Backlog*: Tasks and improvements are tracked in our [backlog system](backlog/).
 
 ### Characteristics
 
-1. **Hierarchical Structure**: Interfaces can inherit from other interfaces, allowing for reusable and extendable configurations.
-2. **Data Specification**: Inputs, outputs, and other data-related specifications are clearly defined.
-3. **Operations**: The file can specify operations such as computing and reviewing data.
-4. **Environment Variable Expansion**: Environment variables can be used within the configuration and will be expanded at runtime.
+1. *Hierarchical Structure*: Interfaces can inherit from other interfaces, allowing for reusable and extendable configurations.
+2. *Data Specification*: Inputs, outputs, and other data-related specifications are clearly defined.
+3. *Operations*: The file can specify operations such as computing and reviewing data.
+4. *Environment Variable Expansion*: Environment variables can be used within the configuration and will be expanded at runtime.
 
 ### Required Entries
 
@@ -221,8 +223,8 @@ A typical Linguine configuration file contains the following entries:
 #### `input`
 Specifies the input data for the interface. This can include mappings and columns.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `type`: The type of input (e.g., `hstack` for horizontal stacking).
   - `index`: The index of the input data.
   - `mapping`: A dictionary mapping input fields to their corresponding values.
@@ -231,8 +233,8 @@ Specifies the input data for the interface. This can include mappings and column
 #### `output`
 Specifies the output data for the interface. This can include mappings and columns.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `type`: The type of output (e.g., `hstack` for horizontal stacking).
   - `index`: The index of the output data.
   - `mapping`: A dictionary mapping output fields to their corresponding values.
@@ -241,47 +243,47 @@ Specifies the output data for the interface. This can include mappings and colum
 #### `compute`
 Defines the computations to be performed on the data.
 
-- **Type**: `list`
-- **Items**: Each item is a dictionary specifying a computation.
+- *Type*: `list`
+- *Items*: Each item is a dictionary specifying a computation.
   - `field`: The field to be computed.
   - `operation`: The operation to be performed.
 
 #### `review`
 Specifies the fields to be reviewed.
 
-- **Type**: `list`
-- **Items**: Each item is a dictionary specifying a review operation.
+- *Type*: `list`
+- *Items*: Each item is a dictionary specifying a review operation.
   - `field`: The field to be reviewed.
   - `operation`: The review operation.
 
 #### `cache`
 Specifies the cache columns.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `columns`: A list of columns to be cached.
 
 #### `constants`
 Defines constant values to be used in the interface.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `type`: The type of constants (e.g., `hstack` for horizontal stacking).
   - `specifications`: A list of specifications for the constants.
 
 #### `parameters`
 Specifies parameters for the interface.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `type`: The type of parameters (e.g., `hstack` for horizontal stacking).
   - `specifications`: A list of specifications for the parameters.
 
 #### `inherit`
 Specifies inheritance from another interface.
 
-- **Type**: `dict`
-- **Keys**:
+- *Type*: `dict`
+- *Keys*:
   - `directory`: The directory of the parent interface.
   - `filename`: The filename of the parent interface.
   - `ignore`: A list of keys to ignore from the parent interface.
@@ -477,12 +479,12 @@ Horizontal stacking (`hstack`) combines data sources by aligning them side-by-si
 
 #### Required Entries
 
-- **type**: Must be set to `hstack`.
-- **specifications**: A list of data sources to be horizontally stacked.
-  - **on**: The column or index to join on. Default is `index`.
-  - **how**: The type of join to perform (`left`, `right`, `outer`, `inner`). Default is `left`.
-  - **lsuffix**: Suffix to use for overlapping columns from the left data source. Default is an empty string.
-  - **rsuffix**: Suffix to use for overlapping columns from the right data source. Default is `_right`.
+- *type*: Must be set to `hstack`.
+- *specifications*: A list of data sources to be horizontally stacked.
+  - *on*: The column or index to join on. Default is `index`.
+  - *how*: The type of join to perform (`left`, `right`, `outer`, `inner`). Default is `left`.
+  - *lsuffix*: Suffix to use for overlapping columns from the left data source. Default is an empty string.
+  - *rsuffix*: Suffix to use for overlapping columns from the right data source. Default is `_right`.
 
 #### Example
 
@@ -510,9 +512,9 @@ Vertical stacking (`vstack`) combines data sources by aligning them one below th
 
 #### Required Entries
 
-- **type**: Must be set to `vstack`.
-- **specifications**: A list of data sources to be vertically stacked.
-- **reset_index**: Whether to reset the index after stacking. Default is `False`.
+- *type*: Must be set to `vstack`.
+- *specifications*: A list of data sources to be vertically stacked.
+- *reset_index*: Whether to reset the index after stacking. Default is `False`.
 
 #### Example
 
@@ -578,21 +580,21 @@ compute:
 
 #### Key Components:
 
-- **function**: The name of the function to be executed.
-- **field**: The name of the field where the result will be stored. This can be a single field or a list of fields for functions that return multiple values.
-- **args**: A dictionary of arguments to be passed to the function.
-- **refresh**: (Optional) A boolean indicating whether to recompute the value even if it already exists. Default is `False`.
+- *function*: The name of the function to be executed.
+- *field*: The name of the field where the result will be stored. This can be a single field or a list of fields for functions that return multiple values.
+- *args*: A dictionary of arguments to be passed to the function.
+- *refresh*: (Optional) A boolean indicating whether to recompute the value even if it already exists. Default is `False`.
 
 ### Types of Compute Arguments
 
 The `args` field can contain different types of arguments:
 
-1. **Direct Arguments**: Simple values passed directly to the function.
-2. **Column Arguments**: References to entire columns of data.
-3. **Row Arguments**: References to values from the current row.
-4. **View Arguments**: References to values processed through a view (e.g., formatted strings).
-5. **Subseries Arguments**: References to subsets of data series.
-6. **Function Arguments**: References to other compute functions.
+1. *Direct Arguments*: Simple values passed directly to the function.
+2. *Column Arguments*: References to entire columns of data.
+3. *Row Arguments*: References to values from the current row.
+4. *View Arguments*: References to values processed through a view (e.g., formatted strings).
+5. *Subseries Arguments*: References to subsets of data series.
+6. *Function Arguments*: References to other compute functions.
 
 ### Example Compute Specifications
 
@@ -667,13 +669,13 @@ review:
 
 #### Key Components:
 
-- **field**: The name of the field to be reviewed. This can be a single field or a list of fields.
-- **type**: The type of review widget to be used (e.g., "text", "dropdown", "checkbox", etc.).
-- **options**: A dictionary of additional options specific to the review type.
+- *field*: The name of the field to be reviewed. This can be a single field or a list of fields.
+- *type*: The type of review widget to be used (e.g., "text", "dropdown", "checkbox", etc.).
+- *options*: A dictionary of additional options specific to the review type.
 
 ### Common Review Types
 
-1. **Text Review**
+1. *Text Review*
    ```yaml
    - field: description
      type: text
@@ -682,7 +684,7 @@ review:
        max_length: 500
    ```
 
-2. **Dropdown Review**
+2. *Dropdown Review*
    ```yaml
    - field: category
      type: dropdown
@@ -691,13 +693,13 @@ review:
        allow_multiple: false
    ```
 
-3. **Checkbox Review**
+3. *Checkbox Review*
    ```yaml
    - field: is_active
      type: checkbox
    ```
 
-4. **Date Review**
+4. *Date Review*
    ```yaml
    - field: event_date
      type: date
@@ -705,7 +707,7 @@ review:
        format: "%Y-%m-%d"
    ```
 
-5. **Numeric Review**
+5. *Numeric Review*
    ```yaml
    - field: score
      type: numeric
@@ -717,7 +719,7 @@ review:
 
 ### Advanced Review Features
 
-1. **Multiple Fields**
+1. *Multiple Fields*
    ```yaml
    - field: [first_name, last_name]
      type: text
@@ -725,7 +727,7 @@ review:
        label: "Full Name"
    ```
 
-2. **Conditional Display**
+2. *Conditional Display*
    ```yaml
    - field: additional_info
      type: text
@@ -735,7 +737,7 @@ review:
          value: true
    ```
 
-3. **Custom Validation**
+3. *Custom Validation*
    ```yaml
    - field: email
      type: text
