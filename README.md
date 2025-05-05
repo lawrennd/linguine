@@ -4,6 +4,12 @@ Linguine is a **specification** for defining data-oriented interfaces using YAML
 
 > **Note**: Linguine itself is a specification, not an implementation. Various libraries and tools can implement the Linguine specification.
 
+## Implementations
+
+### lynguine (Python)
+
+A Python implementation of the Linguine specification is available at [github.com/lawrennd/lynguine](https://github.com/lawrennd/lynguine). This project provides a Python library that follows the Linguine specification for data-oriented architecture, allowing you to work with Linguine configuration files in Python applications.
+
 ## Linguine Configuration File Format
 
 A Linguine configuration file is a YAML file used to define the structure and behavior of data-oriented interfaces. These files specify the inputs, outputs, and various operations to be performed on the data. The configuration is hierarchical, allowing one interface to inherit from another.
